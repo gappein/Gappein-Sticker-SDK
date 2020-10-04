@@ -34,7 +34,7 @@ data class DrawingValues(
                 paint.setTypeface(ResourcesCompat.getFont(context, R.font.bumper))
                 paint.color = Color.BLACK
                 paint.style = Paint.Style.FILL
-                paint.textSize = 20F
+                paint.textSize = 52F
                 paint.getTextBounds(text.text, 0, text.text.length, this)
             }
         }
@@ -59,14 +59,18 @@ data class DrawingValues(
 
     companion object {
 
-        private  val paint = Paint(Paint.ANTI_ALIAS_FLAG)
+        private  val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+            style = Paint.Style.FILL_AND_STROKE
+            strokeWidth = 10F
+            color = Color.BLACK
+        }
 
         fun default(context: Context) = DrawingValues(
             context = context,
             paint = paint,
             text = TextValues(""),
             isMultiline = false,
-            bitmap = Bitmap.createBitmap(200, 200, Bitmap.Config.ARGB_8888)
+            bitmap = Bitmap.createBitmap(400, 300, Bitmap.Config.ARGB_8888)
         )
     }
 }
