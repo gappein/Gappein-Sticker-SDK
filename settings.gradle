@@ -1,0 +1,3 @@
+include ':sticker'
+include ':app'
+rootProject.name = "app-sticker"
