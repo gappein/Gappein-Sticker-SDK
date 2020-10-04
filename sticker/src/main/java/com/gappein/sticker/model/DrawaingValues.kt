@@ -1,13 +1,17 @@
 package com.gappein.sticker.model
 
+import android.content.Context
 import android.graphics.*
 import android.text.StaticLayout
 import android.text.TextPaint
+import androidx.core.content.res.ResourcesCompat
+import com.gappein.sticker.R
 
 /**
  * Created by Himanshu Singh on 10/4/20.
  */
 data class DrawingValues(
+    val context: Context,
     val paint: Paint,
     val text: TextValues,
     val isMultiline: Boolean,
@@ -27,6 +31,7 @@ data class DrawingValues(
                 right = textWidth
                 bottom = textLayout.height
             } else {
+                paint.setTypeface(ResourcesCompat.getFont(context, R.font.bumper))
                 paint.color = Color.BLACK
                 paint.style = Paint.Style.FILL
                 paint.textSize = 20F
@@ -53,15 +58,15 @@ data class DrawingValues(
     }
 
     companion object {
-        private  val paint = Paint(Paint.ANTI_ALIAS_FLAG)
-        val plain = Typeface.createFromAsset( pathToFont);
 
-        val default
-            get() = DrawingValues(
-                paint = paint,
-                text = TextValues(""),
-                isMultiline = false,
-                bitmap = Bitmap.createBitmap(200, 200, Bitmap.Config.ARGB_8888)
-            )
+        private  val paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun default(context: Context) = DrawingValues(
+            context = context,
+            paint = paint,
+            text = TextValues(""),
+            isMultiline = false,
+            bitmap = Bitmap.createBitmap(200, 200, Bitmap.Config.ARGB_8888)
+        )
     }
 }

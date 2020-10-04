@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-      val x =  Generator.setText(TextValues(text = "Himanshu")).draw()
+      val x =  Generator(this).setText(TextValues(text = "Himanshu")).draw()
         background.setImageBitmap(x)
     }
 }
