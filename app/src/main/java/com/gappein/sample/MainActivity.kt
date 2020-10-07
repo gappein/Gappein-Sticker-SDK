@@ -25,13 +25,12 @@ class MainActivity : AppCompatActivity() {
 
 
             override fun afterTextChanged(s: Editable?) {
-                if (s.toString().length < 20) {
 //                    stickerView.updateText(s.toString())
-                    background.setImageBitmap(
-                        stickerView.generateSticker(s.toString())
-                    )
-                }
+                background.setImageBitmap(
+                    stickerView.generateSticker(s.toString())
+                )
             }
+
         }
         )
     }
