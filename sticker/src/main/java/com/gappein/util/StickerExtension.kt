@@ -13,10 +13,7 @@ fun StickerView.generateSticker(text: String): Bitmap {
     val width = if (view.measuredWidth == 0) 1 else view.measuredWidth
     val height = if (view.measuredHeight == 0) 1 else view.measuredHeight
 
-    val bitmap = Bitmap.createBitmap(
-        width, height,
-        Bitmap.Config.ARGB_8888
-    )
+    val bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
     val canvas = Canvas(bitmap)
 
     view.layout(0, 0, width, height)

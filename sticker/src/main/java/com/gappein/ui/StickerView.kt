@@ -5,12 +5,14 @@ import android.content.res.ColorStateList
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
+import android.util.AttributeSet
+import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.content.res.ResourcesCompat
 import com.gappein.R
 import com.gappein.util.generateColor
 
-class StickerView(context: Context) : AppCompatTextView(context) {
+class StickerView : AppCompatTextView {
 
     companion object {
         private const val DEFAULT_STROKE = 4f
@@ -25,9 +27,22 @@ class StickerView(context: Context) : AppCompatTextView(context) {
     private val _typeFace = ResourcesCompat.getFont(this.context, R.font.bumper)
     private val _color = generateColor()
 
-    init {
+    constructor(context: Context, attributeSet: AttributeSet?, defStyle: Int) : super(
+        context,
+        attributeSet,
+        defStyle
+    ) {
         initResources()
     }
+
+    constructor(context: Context) : super(context) {
+        initResources()
+    }
+
+    constructor(context: Context, attributeSet: AttributeSet?) : super(context, attributeSet) {
+        initResources()
+    }
+
 
     private fun updateShadowColor() {
         setShadowLayer(
@@ -49,11 +64,12 @@ class StickerView(context: Context) : AppCompatTextView(context) {
     }
 
     fun updateText(text: String) {
+        layoutParams = ViewGroup.LayoutParams(measuredWidth, measuredHeight)
         if (text.contains(DEFAULT_TEXT)) {
             val splitString = text.split(DEFAULT_TEXT, limit = 2)
             val firstString = splitString.first()
             val lastString = splitString.last()
-            val displayText =firstString + "\n" + lastString
+            val displayText = firstString + "\n" + lastString
             setText(displayText)
         } else {
             setText(text)
