@@ -2,7 +2,6 @@ package com.gappein
 
 import android.content.Context
 import android.content.res.ColorStateList
-import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
@@ -22,6 +21,7 @@ class StickerView(context: Context) : AppCompatTextView(context) {
     private var isDrawing: Boolean = false
     private val mShadowColors: ColorStateList = ColorStateList.valueOf(Color.GRAY)
     private val typeFace = ResourcesCompat.getFont(this.context, R.font.bumper)
+    private val COLOR = generateColor()
 
     init {
         initResources()
@@ -40,12 +40,13 @@ class StickerView(context: Context) : AppCompatTextView(context) {
     private fun initResources() {
         typeface = typeFace
         textSize = DEFAULT_TEXT_SIZE
-        setTextColor(generateColor())
+        setTextColor(COLOR)
         updateShadowColor()
     }
 
     fun updateText(text: String) {
         setText(text)
+        invalidate()
     }
 
     override fun invalidate() {

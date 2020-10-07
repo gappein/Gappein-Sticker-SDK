@@ -14,7 +14,7 @@ fun StickerView.generateSticker(text:String): Bitmap {
         Bitmap.Config.ARGB_8888
     )
     val canvas = Canvas(bitmap)
-    view.layout(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight())
+    view.layout(0, 0, view.measuredWidth, view.measuredHeight)
     view.draw(canvas)
     return bitmap
 }
