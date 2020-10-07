@@ -35,5 +35,5 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
 //    implementation project(":sticker")
-    implementation 'com.gappein:sticker:1.0.0-alpha1'
+    implementation 'com.gappein:sticker:1.0.0-alpha2'
 }
