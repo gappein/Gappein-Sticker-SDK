@@ -1,18 +1,18 @@
 package com.gappein.sample
 
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.gappein.sticker.Generator
-import com.gappein.sticker.model.TextValues
+import androidx.appcompat.app.AppCompatActivity
+import com.gappein.StickerView
+import com.gappein.util.generateSticker
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val x = StickerView(this)
+        x.updateText("dsfsdfsdf")
         setContentView(R.layout.activity_main)
-
-      val x =  Generator(this).setText(TextValues(text = "hey Himanshuhey Himan")).draw()
-        background.setImageBitmap(x)
+        background.setImageBitmap(x.generateSticker())
     }
 }

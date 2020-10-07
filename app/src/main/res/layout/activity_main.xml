@@ -7,8 +7,9 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:padding="20dp"
+        android:layout_height="0dp"
         android:text="Hello World!"
         android:id="@+id/background"
         app:layout_constraintBottom_toBottomOf="parent"
