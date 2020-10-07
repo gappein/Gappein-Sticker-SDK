@@ -63,6 +63,11 @@ class StickerView : AppCompatTextView {
         updateShadowColor()
     }
 
+    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+        setMeasuredDimension(measuredWidth, measuredHeight)
+    }
+
     fun updateText(text: String) {
         layoutParams = ViewGroup.LayoutParams(measuredWidth, measuredHeight)
         if (text.contains(DEFAULT_TEXT)) {
@@ -75,7 +80,6 @@ class StickerView : AppCompatTextView {
             setText(text)
         }
     }
-
 
     override fun invalidate() {
         if (_isDrawing) return

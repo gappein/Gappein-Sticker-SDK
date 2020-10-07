@@ -4,8 +4,6 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import androidx.appcompat.app.AppCompatActivity
-import com.gappein.ui.StickerView
-import com.gappein.util.generateSticker
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -25,13 +23,12 @@ class MainActivity : AppCompatActivity() {
 
 
             override fun afterTextChanged(s: Editable?) {
-                if (s.toString().length < 20) {
 //                    stickerView.updateText(s.toString())
-                    background.setImageBitmap(
-                        stickerView.generateSticker(s.toString())
-                    )
-                }
+                background.setImageBitmap(
+                    stickerView.generateSticker(s.toString())
+                )
             }
+
         }
         )
     }
