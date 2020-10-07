@@ -3,7 +3,7 @@ package com.gappein.util
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.view.View.MeasureSpec
-import com.gappein.StickerView
+import com.gappein.ui.StickerView
 
 fun StickerView.generateSticker(text: String): Bitmap {
     val view = this
@@ -19,7 +19,7 @@ fun StickerView.generateSticker(text: String): Bitmap {
     )
     val canvas = Canvas(bitmap)
 
-    view.layout(0, 0,width, height)
+    view.layout(0, 0, width, height)
     view.draw(canvas)
     return bitmap
 }
