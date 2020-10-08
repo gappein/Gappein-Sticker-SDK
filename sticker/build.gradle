@@ -17,7 +17,7 @@ ext {
     siteUrl = 'https://www.gappein.com/'
     gitUrl = 'https://github.com/Gappein/Gappein-Sticker-SDK.git'
 
-    libraryVersion = '1.0.0-alpha2'
+    libraryVersion = '1.0.0-alpha1'
 
     developerId = 'hi-manshu'
     developerName = 'Himanshu Singh'
@@ -36,7 +36,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
-        versionName "1.0.0-alpha2"
+        versionName "1.0.0-alpha1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
