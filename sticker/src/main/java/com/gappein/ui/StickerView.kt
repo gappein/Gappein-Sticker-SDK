@@ -8,18 +8,16 @@ import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatTextView
-import androidx.core.content.res.ResourcesCompat
-import com.gappein.R
 import com.gappein.util.generateColor
 import com.gappein.util.getFont
 
 class StickerView : AppCompatTextView {
 
     companion object {
-        private const val DEFAULT_STROKE = 4f
+        private const val DEFAULT_SHADOW = 4f
         private const val DEFAULT_TEXT_SIZE = 40f
         private const val DEFAULT_TEXT = " "
-        private const val STROKE_WIDTH: Float = 2.toFloat()
+        private const val STROKE_WIDTH: Float = 3.toFloat()
         private const val STROKE_COLOR: Int = Color.WHITE
     }
 
@@ -47,9 +45,9 @@ class StickerView : AppCompatTextView {
 
     private fun updateShadowColor() {
         setShadowLayer(
-            DEFAULT_STROKE,
-            DEFAULT_STROKE,
-            DEFAULT_STROKE,
+            DEFAULT_SHADOW,
+            DEFAULT_SHADOW,
+            DEFAULT_SHADOW,
             _shadowColors.getColorForState(drawableState, 0)
         )
     }
