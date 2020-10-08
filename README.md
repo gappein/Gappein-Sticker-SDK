@@ -10,6 +10,11 @@ Gappein Sticker SDK is just android SDK where you can convert your text as Stick
   - You can use it with your XML View
   - And yes, it can be used in your view file.
 ### To install it in your project,
+
+```groovy
+implementation 'com.gappein:sticker:1.0.0-alpha1'
+```
+
 ### To use it in View (Activity/Fragment)
 
 Add it in the onCreate() of your view file like,
