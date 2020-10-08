@@ -12,7 +12,7 @@ Gappein Sticker SDK is just android SDK where you can convert your text as Stick
 ### To install it in your project,
 
 ```groovy
-implementation 'com.gappein:sticker:1.0.0-alpha1'
+implementation 'com.gappein:sticker:1.0.0'
 ```
 
 ### To use it in View (Activity/Fragment)
